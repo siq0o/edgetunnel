@@ -38,8 +38,9 @@ https://www.cloudflare.com/
 
 | 选项            | 值                      |
 | --------------- | ----------------------- |
-| Build Command   | npm run cf-page-vless   |
-| Build Directory | dist/apps/cf-page-vless |
+| Framework preset| None                    |
+| Build Command   | `npm run cf-page-vless` |
+| Build Directory | `/dist/apps/node-vless` |
 
 | 环境变量     | 值                                   |
 | ------------ | ------------------------------------ |
@@ -68,7 +69,7 @@ https://www.cloudflare.com/
 
 ![custom_domain](../public/custom_domain.png)
 
-### 使用 Cloudflare Pages 最新 build V2 系统
+### 使用 Cloudflare Pages 最新 build V2 系统 (可选)
 
 ![build-v](../public/pages-buildV2.png)
 
@@ -81,3 +82,9 @@ https://www.cloudflare.com/supplemental-terms/
 > Unlike most Cloudflare products, the Developer Platform can be used to host content. Content stored on the Developer Platform (whether in conjunction with a Cloudflare storage offering or not) that we determine in our sole judgment to be illegal, harmful, or in violation of Section 5 of the Cloudflare Developer Platforms Supplemental Terms may be blocked or removed, and use of the Developer Platform for storage of such illegal or harmful content may result in suspension or termination of Cloudflare Services. While we generally try to provide notice of such action, we reserve the right to take action without notice as appropriate. For these purposes, illegal or harmful content includes but is not limited to: (a) content containing, promoting, or facilitating child sexual abuse material or human trafficking; (b) content that infringes on another person’s intellectual property rights or is otherwise unlawful; (c) content that discloses sensitive personal information, incites or exploits violence, or is intended to defraud the public; and (d) content that seeks to distribute malware, facilitate phishing, or otherwise constitutes technical abuse.
 
 按照我对协议理解，Cloudflare Worker 是可以运行代理软件的。
+
+# 客户端信息 (Vless + TLS + Websocket)
+1. 服务器地址和Websocket的地址(Hostname)填写为Cloudflare分配的.pages.dev域名，去掉 "https://" 前缀
+2. Websocket路径为/vless/<UUID>，其中<UUID>部分需要替换为上面的UUID。
+3. 端口443
+4. ID就是上面的UUID
